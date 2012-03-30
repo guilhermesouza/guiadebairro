@@ -1,0 +1,15 @@
+{% extends 'anuncio/base.html' %}
+    {% block head_title %}Viewing category {{categoria.titulo}}{% endblock %}
+    {% block title %}{{categoria.titulo}}{% endblock %}
+
+    {% block content %}
+        {% if anuncios %}
+            <ul>
+            {% for anuncio in anuncios %}
+                <li><a href="{{anuncio.get_absolute_url}}">{{anuncio.titulo}}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>Anuncio nao encontrado!</p>
+        {% endif %}
+    {% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'anuncio/base.html' %}
+{% block title %}Pagina index{% endblock %}
+
+{% block content %}
+    <h2>Categorias</h2>
+    {% if categorias %}
+        <ul>
+        {% for categoria in categorias %}
+            <li><a href="{{categoria.get_absolute_url}}">{{categoria.titulo}}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não existe categoria cadastrada!</p>
+    {% endif %}
+
+    <h2>Anuncios</h2>
+    {% if anuncios %}
+        <ul>
+        {% for anuncio in anuncios %}
+            <li><a href="{{anuncio.get_absolute_url}}">{{anuncio.titulo}}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não existe anuncio cadastrado!.</p>
+    {% endif %}
+
+{% endblock %}
+~              

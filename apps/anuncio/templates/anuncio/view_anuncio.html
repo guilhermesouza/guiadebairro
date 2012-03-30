@@ -1,0 +1,8 @@
+{% extends 'anuncio/base.html' %}
+{% block head_title %}{{anuncio.titulo}}{% endblock %}
+{% block title %}{{anuncio.titulo}}{% endblock %}
+
+{% block content %}
+    {{anuncio.descricao}}<h3 class="date">{{anuncio.publicacao}}</span></h3>
+    <img src="{{ MEDIA_URL }}{{ anuncio.foto.url_200x100 }}" alt="" class="left" />
+{% endblock %}

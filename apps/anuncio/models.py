@@ -16,7 +16,7 @@ class Anuncio(models.Model):
     titulo = models.CharField(max_length=60)
     slug = models.SlugField(max_length=100, unique=True)
     descricao = models.TextField()
-    categoria = models.ForeignKey('catalogo.Categoria')
+    categoria = models.ForeignKey('anuncio.Categoria')
     publicado = models.DateTimeField(auto_now_add=True)
     #photo = ImageWithThumbsField(null=True, blank=True, upload_to='galeria', sizes=((90,90),(200,100)))
     #thumbnail = ImageWithThumbsField(null=True, blank=True, upload_to='galeria/thumbnail')
@@ -27,8 +27,9 @@ class Anuncio(models.Model):
 
     @permalink
     def get_absolute_url(self):
-        return ('view_catalogo_anuncio', None, { 'slug': self.slug })
-
+        return ('view_anuncio_anuncio', None, { 'slug': self.slug })
+    class Meta:
+        verbose_name_plural = 'Anuncios'
 
 class Categoria(models.Model):
     titulo = models.CharField(max_length=100, db_index=True)
@@ -39,7 +40,8 @@ class Categoria(models.Model):
 
     @permalink
     def get_absolute_url(self):
-        return ('view_catalogo_categoria', None, { 'slug': self.slug })
+        return ('view_anuncio_categoria', None, { 'slug': self.slug })
 
-
+    class Meta:
+        verbose_name_plural = 'Categorias'
 

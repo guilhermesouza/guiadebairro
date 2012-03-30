@@ -7,20 +7,20 @@ Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 """
 
 from django.contrib import admin
-from catalogo.models import Anuncios, Categorias
+from anuncio.models import Anuncio, Categoria
 
-class AnunciosAdmin(admin.ModelAdmin):
+class AnuncioAdmin(admin.ModelAdmin):
     #exclude = ['posted']
     prepopulated_fields = {'slug': ('titulo',)}
     ordering = ['titulo']
     search_fields = ('id','titulo')
     list_filter = ('id','titulo')
 
-class CategoriasAdmin(admin.ModelAdmin):
+class CategoriaAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('titulo',)}
     ordering = ['titulo']
     list_filter = ('id','titulo')
 
 
-admin.site.register(Anuncios, AnunciosAdmin)
-admin.site.register(Categorias, CategoriasAdmin)
+admin.site.register(Anuncio, AnuncioAdmin)
+admin.site.register(Categoria, CategoriaAdmin)

@@ -6,24 +6,24 @@ Created by Guilherme Souza on 2012-02-12.
 Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 """
 
-from catalogo.models import Post, Category
+from catalogo.models import Anuncios, Categorias
 from django.shortcuts import render_to_response, get_object_or_404
 
 def index(request):
     return render_to_response('catalogo/index.html', {
-    'categories': Category.objects.all(),
-    'posts': Post.objects.all()[:5]
+    'categorias': Categorias.objects.all(),
+    'anuncios': Anuncios.objects.all()[:5]
 })
 
-def view_post(request, slug):
-    return render_to_response('catalogo/view_post.html', {
-        'post': get_object_or_404(Post, slug=slug)
+def view_anuncios(request, slug):
+    return render_to_response('catalogo/view_anuncio.html', {
+        'anuncio': get_object_or_404(Anuncios, slug=slug)
 })
 
-def view_category(request, slug):
-    category = get_object_or_404(Category, slug=slug)
-    return render_to_response('catalogo/view_category.html', {
-        'category': category,
-        'posts': Post.objects.filter(category=category)[:5]
+def view_categorias(request, slug):
+    categoria = get_object_or_404(Categorias, slug=slug)
+    return render_to_response('catalogo/view_categoria.html', {
+        'categorias': categoria,
+        'anuncios': Anuncios.objects.filter(categorias=categoria)[:5]
 })
 

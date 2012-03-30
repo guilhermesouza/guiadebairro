@@ -10,8 +10,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic.simple import direct_to_template
 from django.contrib import admin
 from django.conf import settings
-from catalogo.models import *
-from django.views.generic.list_detail import object_list
+from anuncio.models import *
+#from django.views.generic.list_detail import object_list
 admin.autodiscover()
 
 # Uncomment the next two lines to enable the admin:
@@ -22,15 +22,14 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 
-    (r'^$', 'catalogo.views.index'),
-#   url(r'^catalogo/(?P<year>\d{4})/(?P<month>\w{3})/(?P<day>\d{1,2})/(?P<slug>[-\w]+)/$', 'catalogo.views.view_post', name='view_catalogo_post'),
-#    url(r'^catalogo/', object_list, {'queryset': Post.objects.all() }),
+    (r'^$', 'anuncio.views.index'),
+#   url(r'^catalogo/', object_list, {'queryset': Anuncios.objects.all() }),
     
-    #catalogo
-    url(r'^catalogo/(?P<slug>[^\.]+)','catalogo.views.view_post',name='view_catalogo_post'),
-    url(r'^catalogo/category/(?P<slug>[^\.]+).html', 'catalogo.views.view_category', name='view_catalogo_category'),
+    # Anuncios / Categorias
+    url(r'^anuncio/(?P<slug>[^\.]+)','anuncio.views.view_anuncio',name='view_anuncio_anuncio'),
+    url(r'^categorias/(?P<slug>[^\.]+)', 'anuncio.views.view_categoria', name='view_anuncio_categoria'),
 
-
+    # Media
     (r'^media/(.*)$', 'django.views.static.serve',
     {'document_root': settings.MEDIA_ROOT}),
 )
