@@ -1,0 +1,8 @@
+{% extends 'catalogo/base.html' %}
+{% block head_title %}{{post.title}}{% endblock %}
+{% block title %}{{post.title}}{% endblock %}
+
+{% block content %}
+    {{post.body}}<h3 class="date">{{post.posted}}</span></h3>
+    <img src="{{ MEDIA_URL }}{{ post.photo.url_200x100 }}" alt="" class="left" />
+{% endblock %}
