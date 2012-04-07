@@ -1,15 +1,1 @@
-# Ignorar arquivos específicos
-.DS_Store
 
-# Use curingas como
-*~
-*.swp
-*.pyc
-*.db
-
-# Ignorar todos os diretórios e arquivos em um diretório.
-tmp/**/* 
-catalogo/*
-
-settings_local.py
-settings.py
