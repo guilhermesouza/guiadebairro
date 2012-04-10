@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block nav %}
+<nav><!-- top nav -->
+		<!-- div class="menu" -->
+			<div class="subnav subnav-fixed">			
+			<ul class="nav nav-pills">
+
+				<li class=""><a href="/">Home</a></li>
+				<li class="active"><a href="/catalogo/">categorias</a>
+				<li><a href="/noticias/">Notícias</a>
+				<li><a href="http://www.youblisher.com/p/256986-Guia-Encontre-Aqui-Marco/">Guia Digital</a></li>
+				<li><a href="{{ STATIC_URL }}site/file/proposta_comercial_guia_encontre_aqui.pdf" target="_blank">Como Anunciar</a></li>
+
+				<!-- <li><a href="#">Serviços</a>
+			    <ul>
+   					<li><a href="#">Servio-1</a></li>
+   					<li><a href="#">Servio-1</a></li>
+   				</ul> 
+  				</li> submenu -->
+				
+				<li><a href="/fale-conosco/">Fale conosco</a></li>
+				<!-- Adicionar form Busca -->
+			</ul>
+		</div>
+	</nav><!-- end of top nav -->
+
+
+{% endblock %}
+
+
+{{flatpage.content}}
+{% block conteudo %}
+<h3>Categorias</h3>
+
+    {% if categorias.count %}
+	  <ul>
+      {% for categoria in categorias %}
+       <li><a href="{{categoria.get_absolute_url}}">{{categoria.titulo}} ({{ categoria|length }})</a></li>
+      {% endfor %}
+      </ul>
+    {% else %}
+       <p>Ops! Não existe categorias cadastradas!</p>
+    {% endif %}
+  
+{% endblock %}       
+
+

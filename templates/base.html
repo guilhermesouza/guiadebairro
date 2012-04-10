@@ -1,0 +1,240 @@
+{% load static %}
+{% get_static_prefix as STATIC_URL %}
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Guia de Bairro Encontre Aqui - {% block head_title %}{% endblock %}</title>
+	<meta name="description" content="Guia de Bairro Encontre Aqui">
+    <meta name="author" content="Guilherme Souza | GMRio.com">
+    <link href="{{ STATIC_URL }}site/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}site/css/style.css" type="text/css" media="screen" />
+
+	<link rel="stylesheet" href="{{ STATIC_URL }}site/css/custom.css" type="text/css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}site/css/print.css" media="print" />
+	<link href="{{ STATIC_URL }}site/css/bootstrap-responsive.css" rel="stylesheet">
+	
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	
+	<link rel="shortcut icon" href="/media/img/favicon.ico">
+    <link rel="apple-touch-icon" href="{{ STATIC_URL }}site/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}site/img/appleimgim-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}site/img/apple-touch-icon-114x114.png">
+	
+	<style>
+		
+		body {
+		margin: 0 auto;
+		width: 960px;
+		font: 14px/20px "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
+		background: #FFF url({{ STATIC_URL }}site/img/topo-fundo.png) top center repeat-x}* html
+		}
+	    
+	    header[role="banner"]{
+		  	background:#0063A6;
+			height: 100px;
+			width: 100%;
+		   }
+		 header hgroup{ 
+		 margin: 0;
+		 padding-bottom: 10px;
+		 width: 100%;
+		}
+	    
+		.logo-top {float: letf;}
+		.banner-top {float: right; margin: 0; padding: 0;}
+		
+		.carousel {padding-top:10px;}
+		
+		a, a:visited {
+		color: #0090D2;
+		text-decoration: none;
+		}
+		.subnav{
+		text-transform: uppercase;}
+		
+		.nav {
+			margin-bottom: 0px;
+		
+		.borda-topo{
+			border-top: 3px solid #369BD7;
+		}
+		.nav-pills > li > a {		
+			margin-left: 2px;
+		}
+			
+	</style>
+
+</head>
+<body>
+
+		<header role="banner">
+		<hgroup>
+
+			<a href="/" title="Guia de Bairro"><img class=".logo-top" src="{{ STATIC_URL }}site/img/logo-topo.png" alt="Guiaencontreaqui.com" width="148" height="99"></a>
+			<a href="/fale-conosco/" title="Guia de Bairro"><img class="banner-top" src="{{ STATIC_URL }}site/img/propaganda_topo_100_x_900_2.jpg" alt="Guiaencontreaqui.com" width="800" height="129"></a>
+		</hgroup><!-- end hgroup -->
+       	<!-- wrapper div for Firefox 3.x ref: http://01i.jp/html5bll -->
+		
+		</header>
+		
+		{% block nav %}
+		{% endblock %}
+	
+	
+	<div id="content">
+	{{ flatpage.content }}
+		{% block conteudo %}
+			
+				
+				<!-- div style="border-top: 2px solid #369BD7;">
+					<img src="images/stripedfish.png" alt="fish" class="alignleft" />	<p>Pellentesque ut sapien arcu, egestas mollis massa. Fusce lectus leo, fringilla at aliquet sit amet, volutpat non erat. Aenean molestie nibh vitae turpis venenatis vel accumsan nunc tincidunt. Suspendisse id purus vel felis auctor mattis non ac erat. Pellentesque sodales venenatis condimentum. Aliquam sit amet nibh nisi, ut pulvinar est. Donec hendrerit fringilla ligula, ac rutrum nulla bibendum id. Cras sapien ligula, tincidunt eget euismod nec, ultricies eu augue. Nulla vitae velit sollicitudin magna mattis eleifend. Nam enim justo, vulputate vitae pretium ac, rutrum at turpis. Aenean id magna neque. Sed rhoncus aliquet viverra.</p>
+
+				</div -->
+				
+				<!--article class="articlecontent">
+				<img src="images/stripedfish.png" alt="fish" class="alignleft" />	<p>Pellentesque ut sapien arcu, egestas mollis massa. Fusce lectus leo, fringilla at aliquet sit amet, volutpat non erat. Aenean molestie nibh vitae turpis venenatis vel accumsan nunc tincidunt. Suspendisse id purus vel felis auctor mattis non ac erat. Pellentesque sodales venenatis condimentum. Aliquam sit amet nibh nisi, ut pulvinar est. Donec hendrerit fringilla ligula, ac rutrum nulla bibendum id. Cras sapien ligula, tincidunt eget euismod nec, ultricies eu augue. Nulla vitae velit sollicitudin magna mattis eleifend. Nam enim justo, vulputate vitae pretium ac, rutrum at turpis. Aenean id magna neque. Sed rhoncus aliquet viverra.</p>
+				</article-->
+
+				
+				
+				
+				<!-- article class="articlecontent  style="border-top: 2px solid #369BD7; padding-bottom: 3px;">
+					<h2><a href="#">Here's another article title</a></h2>
+					<img src="images/pelican.png" alt="pelican" class="alignright" /><p>Vivamus vitae nulla dolor. Suspendisse eu lacinia justo. Vestibulum a felis ante, non aliquam leo. Aliquam eleifend, est viverra semper luctus, metus purus commodo elit, a elementum nisi lectus vel magna. Praesent faucibus leo sit amet arcu vehicula sed facilisis eros aliquet. Etiam sodales, enim sit amet mollis vestibulum, ipsum sapien accumsan lectus, eget ultricies arcu velit ut diam. Aenean fermentum luctus nulla, eu malesuada urna consequat in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque massa lacus, sodales id facilisis ac, lobortis sed arcu. </p>
+				</article -->
+				
+		{% endblock %}
+        </div><!-- content .articlecontent -->
+		
+		<aside>
+			
+			
+			<section>
+				<h6>Publicidade</h6>
+				    <a href="#" target="_blank"><img src="{{ STATIC_URL }}site/img/ANR_300x250.jpg" alt="publicidade" width="270" height="250"></a>
+					<br /><br />
+					<a href="http://www.senabaterias.com.br" target="_blank"><img src="{{ STATIC_URL }}site/img/Sena_Baterias_300x100.jpg" alt="publicidade" width="270" height="100"></a>
+					<br /><br />
+			</section>
+			<section>
+				<h6>Climatempo</h6>
+				<iframe src='http://selos.climatempo.com.br/selos/MostraSelo.php?CODCIDADE=9979,321&SKIN=padrao' scrolling='no' frameborder='0' width=270 height='170' marginheight='0' marginwidth='0'>
+				</iframe>
+				
+				
+			</section>
+
+			<!--section>
+			
+			
+			
+				<h3>Novidades</h3>
+					<ul>
+						<li><a href="#">Novidade-1</a></li>
+						<li><a href="#">Novidade-2</a></li>
+						
+					</ul>	
+			</section-->
+			
+			<section>
+				<iframe src="http://www.facebook.com/plugins/likebox.php?href=http://www.facebook.com/pages/Guia-Encontre-Aqui/252131104878945&amp;width=270&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=false&amp;height=256" scrolling="no" frameborder="0" style="border: none; overflow:hidden; width:270px; height:256px;" allowtransparency="true">
+				</iframe>
+				<br /><br />
+			</section>
+			
+		</aside><!-- aside coluna da direita -->
+
+		<footer>
+			<br />
+			<p class="pull-right"><a href="#">voltar ao topo</a></p>
+			<p>Copyright © 2012 Guia de Bairro Encontre Aqui. Todos os direitos reservados.<br> <span >Hospedado: <a href="http://gmrio.com" target="_blank">gmrio.com</a></span>
+			
+			<!-- Este layout foi originalmente criado por: http://freehtml5templates.com -->			
+			
+		</footer>
+
+
+<!-- Le javascript
+    ================================================== -->
+	
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ STATIC_URL }}site/js/jquery.js"></script>
+    <script src="../media/js/bootstrap-transition.js"></script>
+    <script src="../media/js/bootstrap-alert.js"></script>
+    <script src="{{ STATIC_URL }}site/js/bootstrap-modal.js"></script>
+    <script src="../media/js/bootstrap-dropdown.js"></script>
+
+    <script src="../media/js/bootstrap-scrollspy.js"></script>
+    <script src="../media/js/bootstrap-tab.js"></script>
+    <script src="../media/js/bootstrap-tooltip.js"></script>
+    <script src="../media/js/bootstrap-popover.js"></script>
+    <script src="../media/js/bootstrap-button.js"></script>
+    <script src="../media/js/bootstrap-collapse.js"></script>
+
+    <script src="{{ STATIC_URL }}site/js/bootstrap-carousel.js"></script>
+    <script src="../media/js/bootstrap-typeahead.js"></script>
+
+    <!--#http://www.designchemical.com/lab/jquery-mega-drop-down-menu-plugin/download/-->
+    <script type='text/javascript' src='{{ STATIC_URL }}site/js/jquery.hoverIntent.minified.js'></script>
+    <script type='text/javascript' src='{{ STATIC_URL }}site/js/jquery.dcmegamenu.1.3.3.js'></script>
+    <!--script>
+        $('#mega-menu-1').dcMegaMenu({
+            rowItems: '3',
+            speed: 'slow',
+            effect: 'slide',
+            fullWidth: false
+        });
+    </script-->
+
+    <script>
+        $('#myCarousel').carousel({
+            interval: 6000
+            
+        });
+    </script>
+    <script>
+        $('#myModal').modal();
+        });
+            
+    </script> 
+	
+	<!-- Analitics -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+ 		_gaq.push(['_setAccount', 'UA-23516537-4']);
+  		_gaq.push(['_trackPageview']);
+
+  		(function() {
+    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  		})();
+
+	</script>
+    
+
+<!-- Coloque esta tag onde você deseja que o botão +1 seja renderizado -->
+
+<!-- Coloque esta chamada de renderização conforme necessário -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'pt-BR'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+
+    <!--[if lt IE 7 ]>
+      <script src="{{ STATIC_URL }}site/js/libs/dd_belatedpng.js"></script>
+      <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+    <![endif]-->
+
+
+
+
+</body>
+</html>

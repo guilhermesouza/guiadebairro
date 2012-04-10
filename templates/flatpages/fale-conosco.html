@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+<nav><!-- top nav -->
+		<!-- div class="menu" -->
+			<div class="subnav subnav-fixed">			
+			<ul class="nav nav-pills">
+
+				<li class=""><a href="/">Home</a></li>
+				<li><a href="/catalogo/">Categorias</a>
+				<li><a href="/noticias/">Notícias</a>
+				<li><a href="http://www.youblisher.com/p/256986-Guia-Encontre-Aqui-Marco/">Guia Digital</a></li>
+				<li><a href="{{ STATIC_URL }}site/file/proposta_comercial_guia_encontre_aqui.pdf" target="_blank">Como Anunciar</a></li>				
+				<li class="active"><a href="/fale-conosco/">Fale conosco</a></li>
+				<!-- Adicionar form Busca -->
+			</ul>
+		</div>
+	</nav><!-- end of top nav -->
+
+
+{% endblock %}
+{{ flatpage.content }}
+
+{% block conteudo %}
+
+{% endblock %}
+
+

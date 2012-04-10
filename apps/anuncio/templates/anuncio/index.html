@@ -1,28 +1,21 @@
-{% extends 'anuncio/base.html' %}
-{% block title %}Pagina index{% endblock %}
+{% extends 'base.html' %}
 
-{% block content %}
-    <h2>Categorias</h2>
-    {% if categorias %}
-        <ul>
-        {% for categoria in categorias %}
-            <li><a href="{{categoria.get_absolute_url}}">{{categoria.titulo}}</a></li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>Não existe categoria cadastrada!</p>
+{% block conteudo %}
+     
+     {% if anuncios.count %}
+      
+         {% for anuncio in anuncios %}
+                   
+            <article class="articlecontent">
+            <h3>{{anuncio.titulo}}</h3>total: {{ anuncios|length }}   
+            <img src="{{ MEDIA_URL }}{{ anuncio.foto.url }}" alt="{{anuncio.titulo}}" class="alignleft" width="90" height="90"/>
+            <p>{{anuncio.descricao}}</p>	
+          			
+            </article><br /><br /><br />         		
+    {% endfor %}
+     
+       {% else %}
+         <p>Ops! Não existem anuncios cadastrados</p>
     {% endif %}
-
-    <h2>Anuncios</h2>
-    {% if anuncios %}
-        <ul>
-        {% for anuncio in anuncios %}
-            <li><a href="{{anuncio.get_absolute_url}}">{{anuncio.titulo}}</a></li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>Não existe anuncio cadastrado!.</p>
-    {% endif %}
-
-{% endblock %}
-~              
+  
+{% endblock %}           

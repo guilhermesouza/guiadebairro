@@ -22,7 +22,11 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 
-    (r'^$', 'anuncio.views.index'),
+    (r'^$', direct_to_template, {'template': 'index.html'}),
+
+    (r'^anuncios/$', 'anuncio.views.index'),
+    (r'^catalogo/$', 'anuncio.views.catalogo'),
+
 #   url(r'^catalogo/', object_list, {'queryset': Anuncios.objects.all() }),
     
     # Anuncios / Categorias

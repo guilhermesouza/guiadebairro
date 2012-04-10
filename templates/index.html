@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block nav %}
+<nav><!-- top nav -->
+		<!-- div class="menu" -->
+			<div class="subnav subnav-fixed">			
+			<ul class="nav nav-pills">
+
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/catalogo/">Categorias</a>
+				<li><a href="/noticias/">Notícias</a>
+				<li><a href="http://www.youblisher.com/p/256986-Guia-Encontre-Aqui-Marco/">Guia Digital</a></li>
+				<li><a href="{{ STATIC_URL }}site/file/proposta_comercial_guia_encontre_aqui.pdf" target="_blank">Como Anunciar</a></li>
+				<!-- <li><a href="#">Serviços</a>
+			    <ul>
+   					<li><a href="#">Servio-1</a></li>
+   					<li><a href="#">Servio-1</a></li>
+   				</ul> 
+  				</li> submenu -->
+				<li><a href="/fale-conosco/">Fale conosco</a></li>
+				<li style="padding-bottom: 0px; border-right-width: 0px; margin-right: 0px; margin-bottom: 0px; margin-top: 6px;" class="pull-right"><g:plusone></g:plusone></li>
+				<!-- Adicionar form Busca -->
+				<li><form style="padding-bottom: 0px; border-right-width: 0px; margin-right: 0px; margin-bottom: 0px; margin-top: 3px;" class="form-search">
+						<input type="text" class="input-medium span2 pull-right search-query" placeholder="Pesquisar">
+				    </form>
+				</li>
+			</ul>
+		</div>
+	</nav><!-- end of top nav -->
+{% endblock %}
+{% block conteudo %}
+	<div id="myCarousel" class="carousel slide">
+	    <div class="carousel-inner">
+	      
+	      <div class="item active">
+	
+	         <img src="{{ STATIC_URL }}site/img/Las_vegas_620x300.jpg" />
+	            <div class="carousel-caption">
+	               <h4>Dicas de viagem</h4>
+	               <p>Las Vegas È a maior cidade do estado americano de Nevada</p>
+	            </div>
+	      </div>
+	    
+	      <div class="item">
+	         <img src="{{ STATIC_URL }}site/img/Reino_Da_Gataria_620x300.jpg" width="620" height="300"/>
+	
+	            <div class="carousel-caption">
+	               <h4>Musical O Reino da Gataria.</h4>
+	               <p>Clássico ganha uma nova roupagem nesta montagem da Cia Atores in Cena</p>
+	            </div>
+	      </div>
+	    
+	      <div class="item">
+	         <img src="{{ STATIC_URL }}site/img/O_Pacto_620x300.jpg" width="620" height="300"/>
+	            <div class="carousel-caption">
+	
+	               <h4>Cinema</h4>
+	               <p>Dicas de cinema para o filme "O Pacto"</p>
+	            </div>
+	      </div>
+	    
+	      <div class="item">
+	         <img src="{{ STATIC_URL }}site/img/cookies_620x300.jpg" width="620" height="300"/>
+	            <div class="carousel-caption">
+	               <h4>Receitas</h4>
+	               <p>Cookies de chocolate</p>
+	            </div>
+	      </div>
+	    </div><!-- /carousel-inner -->
+	    <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+	    <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /myCarousel -->
+    
+    <div class="box box-noticias">
+		<div class="box-top">
+           <h5>Notícias</h5>
+        </div>
+        <div class="box-content" style="padding-right: 0px; margin-right: -1px;">
+           <ul class="materias">
+             <li><a href="#"><img src="{{ STATIC_URL }}site/img/Las_vegas_145x85_Turismo.jpg">
+                 <span class="chapeu">Turismo</span>
+                 <span class="titulo">turismo</span></a></li>
+
+             <li><a href="#"><img src="{{ STATIC_URL }}site/img/cookies_145x85_Receita.jpg">
+                 <span class="chapeu">Receitas</span>
+                 <span class="titulo">receitas</span></a></li>
+             
+             <li><a href="#"><img src="{{ STATIC_URL }}site/img/O_Pacto_145x85_Cinema.jpg">
+                 <span class="chapeu">Cinema</span>
+                 <span class="titulo">cinema</span></a></li>
+             
+             <li><a href="#"><img src="{{ STATIC_URL }}site/img/Reino_Da_Gataria_145x85_Teatro.jpg">
+                 <span class="chapeu">Teatro</span>
+				 <span class="titulo">teatro</span></a></li>
+           </ul>
+        </div>
+        </div> <!-- .box-nas-noticias -->
+		<br>
+        <div class="box box-anuncio-simples">
+        <div class="box-top"></div>
+			<div class="box-content" style="margin-right: -4px;">
+           		<ul class="box-wide-foto">
+             		<li><a href="http://wallaceteixeira.com.br/" target="_blank"><img src="{{ STATIC_URL }}site/img/Wallace_Fotografo_300x100.jpg"></a></li>
+             		<li><a href="/fale-conosco/"><img class="imagem-efeito-redondo" src="{{ STATIC_URL }}site/img/Anuncie_300x100.jpg"></a></li>
+          		</ul>
+			</div>
+     </div> <!-- .box-anuncio-simples -->
+		
+	</div>
+{% endblock %}

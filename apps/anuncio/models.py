@@ -9,6 +9,7 @@ Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 #http://vimeo.com/14884657
 
 from django.db import models
+from django.db.models import Count
 from django.db.models import permalink
 #from thumbs import ImageWithThumbsField
 
@@ -28,6 +29,7 @@ class Anuncio(models.Model):
     @permalink
     def get_absolute_url(self):
         return ('view_anuncio_anuncio', None, { 'slug': self.slug })
+    
     class Meta:
         verbose_name_plural = 'Anuncios'
 
@@ -37,11 +39,17 @@ class Categoria(models.Model):
 
     def __unicode__(self):
         return '%s' % self.titulo
-
+        
     @permalink
     def get_absolute_url(self):
         return ('view_anuncio_categoria', None, { 'slug': self.slug })
-
+       
     class Meta:
         verbose_name_plural = 'Categorias'
+        ordering = ['-titulo']
 
+# pegando o total de anuncios por categorias     
+#    def tatal_anuncio(self):
+#        q=Categoria.objects.annotate(Count('anuncio')
+#	q[0].anuncio__count
+#	return '%' % self.total_anuncio 

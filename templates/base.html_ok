@@ -4,8 +4,7 @@
     </head>
     <body>
         <h1>{% block title %}Welcome to my block{% endblock %}</h1>
-        {% block conteudo %}
-
+        {% block content %}
         {% endblock %}
     </body>
 </html>

@@ -1,15 +1,51 @@
-{% extends 'anuncio/base.html' %}
-    {% block head_title %}Viewing category {{categoria.titulo}}{% endblock %}
-    {% block title %}{{categoria.titulo}}{% endblock %}
+{% extends 'base.html' %}
+{% block nav %}
+<nav><!-- top nav -->
+		<!-- div class="menu" -->
+			<div class="subnav subnav-fixed">			
+			<ul class="nav nav-pills">
 
-    {% block content %}
-        {% if anuncios %}
-            <ul>
-            {% for anuncio in anuncios %}
-                <li><a href="{{anuncio.get_absolute_url}}">{{anuncio.titulo}}</a></li>
-            {% endfor %}
-            </ul>
-        {% else %}
-            <p>Anuncio nao encontrado!</p>
+				<li class=""><a href="/">Home</a></li>
+				<li class="active"><a href="/catalogo/">Categorias</a>
+				<li><a href="/noticias/">Notícias</a>
+				<li><a href="http://www.youblisher.com/p/256986-Guia-Encontre-Aqui-Marco/">Guia Digital</a></li>
+				<li><a href="{{ STATIC_URL }}site/file/proposta_comercial_guia_encontre_aqui.pdf" target="_blank">Como Anunciar</a></li>
+				<!-- <li><a href="#">Serviços</a>
+			    <ul>
+   					<li><a href="#">Servio-1</a></li>
+   					<li><a href="#">Servio-1</a></li>
+   				</ul> 
+  				</li> submenu -->
+				<li><a href="/fale-conosco/">Fale conosco</a></li>
+				<li style="padding-bottom: 0px; border-right-width: 0px; margin-right: 0px; margin-bottom: 0px; margin-top: 6px;" class="pull-right"><g:plusone></g:plusone></li>
+				<!-- Adicionar form Busca -->
+			</ul>
+		</div>
+	</nav><!-- end of top nav -->
+	{% endblock %}
+
+
+    {% block head_title %}Listagem de categorias{% endblock %}
+    {% block title %}{% endblock %}
+
+    {% block conteudo %}
+      <div class="page-header"><h1>{{categoria.titulo}} <small>({{ anuncios|length }})</small></h1></div>
+       {% if anuncios %}
+             {% for anuncio in anuncios %}
+              <article class="articlecontent">
+                <h4>{{anuncio.titulo}}</h4>    
+                <img src="{{ MEDIA_URL }}{{ anuncio.foto.url }}" alt="{{anuncio.titulo}}" class="alignleft" width="90" height="90"/>
+                <p>{{anuncio.descricao|linebreaks}}</p>	
+              </article>       		
+        {% endfor %}
+         
+           {% else %}
+             <p>Ops! Não existem anuncios cadastrados.</p>
         {% endif %}
-    {% endblock %}
+
+ {% endblock %}
+
+
+
+
+    
